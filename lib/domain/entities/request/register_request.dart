@@ -1,4 +1,4 @@
-class RegisterRequestDto {
+class RegisterRequestD {
   final String? name;
 
   final String? email;
@@ -9,7 +9,7 @@ class RegisterRequestDto {
 
   final String? phone;
 
-  RegisterRequestDto({
+  RegisterRequestD({
     required this.name,
     required this.email,
     required this.password,
