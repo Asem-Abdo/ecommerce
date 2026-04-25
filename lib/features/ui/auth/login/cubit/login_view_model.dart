@@ -1,5 +1,5 @@
 import 'package:ecommerce/core/exceptions/app_exception.dart';
-import 'package:ecommerce/domain/entities/request/login_request_dto.dart';
+import 'package:ecommerce/domain/entities/request/login_request.dart';
 import 'package:ecommerce/domain/use_cases/login_use_case.dart';
 import 'package:ecommerce/features/ui/auth/states/auth_states.dart';
 import 'package:flutter/material.dart';
@@ -20,7 +20,7 @@ class LoginViewModel extends Cubit<AuthStates> {
       /// todo : login logic
       try {
         emit(AuthLoadingState());
-        var loginRequest = LoginRequestDto(email: email, password: password);
+        var loginRequest = LoginRequest(email: email, password: password);
         var response = await loginUseCase.invoke(loginRequest);
         emit(AuthSuccessState(authResponse: response));
       } on AppException catch (e) {

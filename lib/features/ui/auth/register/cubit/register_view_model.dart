@@ -1,5 +1,5 @@
 import 'package:ecommerce/core/exceptions/app_exception.dart';
-import 'package:ecommerce/domain/entities/request/register_request_dto.dart';
+import 'package:ecommerce/domain/entities/request/register_request.dart';
 import 'package:ecommerce/domain/use_cases/register_use_case.dart';
 import 'package:ecommerce/features/ui/auth/states/auth_states.dart';
 import 'package:flutter/material.dart';
@@ -27,7 +27,7 @@ class RegisterViewModel extends Cubit<AuthStates> {
       /// todo : login logic
       try {
         emit(AuthLoadingState());
-        var registerRequest = RegisterRequestDto(
+        var registerRequest = RegisterRequest(
           name: name,
           email: email,
           password: password,

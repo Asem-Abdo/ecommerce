@@ -1,24 +1,24 @@
-import 'package:ecommerce/api/model/response/user.dart';
+import 'package:ecommerce/api/model/response/user_dto.dart';
 import 'package:json_annotation/json_annotation.dart';
 
-part 'auth_response.g.dart';
+part 'auth_response_dto.g.dart';
 
 @JsonSerializable()
-class AuthResponse {
+class AuthResponseDto {
   @JsonKey(name: "message")
   final String? message;
   @JsonKey(name: "user")
-  final User? user;
+  final UserDto? user;
   @JsonKey(name: "token")
   final String? token;
 
-  AuthResponse({this.message, this.user, this.token});
+  AuthResponseDto({this.message, this.user, this.token});
 
-  factory AuthResponse.fromJson(Map<String, dynamic> json) {
-    return _$AuthResponseFromJson(json);
+  factory AuthResponseDto.fromJson(Map<String, dynamic> json) {
+    return _$AuthResponseDtoFromJson(json);
   }
 
   Map<String, dynamic> toJson() {
-    return _$AuthResponseToJson(this);
+    return _$AuthResponseDtoToJson(this);
   }
 }

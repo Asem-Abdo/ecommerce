@@ -1,8 +1,8 @@
-import 'package:ecommerce/api/model/response/user.dart';
-import 'package:ecommerce/domain/entities/response/user_dto.dart';
+import 'package:ecommerce/api/model/response/user_dto.dart';
+import 'package:ecommerce/domain/entities/response/user.dart';
 
-extension UserMapper on User {
-  UserDto toUserDto() {
-    return UserDto(name: name, email: email);
+extension UserMapper on UserDto {
+  User toUserD() {
+    return User(name: name, email: email);
   }
 }

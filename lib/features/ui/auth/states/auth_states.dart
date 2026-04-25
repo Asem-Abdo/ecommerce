@@ -1,4 +1,4 @@
-import 'package:ecommerce/domain/entities/response/auth_response_dto.dart';
+import 'package:ecommerce/domain/entities/response/auth_response.dart';
 
 abstract class AuthStates {}
 
@@ -12,6 +12,6 @@ class AuthErrorState extends AuthStates {
 }
 
 class AuthSuccessState extends AuthStates {
-  AuthResponseDto authResponse;
+  AuthResponse authResponse;
   AuthSuccessState({required this.authResponse});
 }

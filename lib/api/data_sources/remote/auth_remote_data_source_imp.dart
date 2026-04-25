@@ -2,9 +2,9 @@ import 'package:ecommerce/api/mapper/auth_response_mapper.dart';
 import 'package:ecommerce/api/mapper/register_request_mapper.dart';
 import 'package:ecommerce/api/web_services.dart';
 import 'package:ecommerce/data/data_sources/remote/auth_remote_data_source.dart';
-import 'package:ecommerce/domain/entities/request/login_request_dto.dart';
-import 'package:ecommerce/domain/entities/request/register_request_dto.dart';
-import 'package:ecommerce/domain/entities/response/auth_response_dto.dart';
+import 'package:ecommerce/domain/entities/request/login_request.dart';
+import 'package:ecommerce/domain/entities/request/register_request.dart';
+import 'package:ecommerce/domain/entities/response/auth_response.dart';
 import 'package:injectable/injectable.dart';
 
 import '../../mapper/login_request_mapper.dart';
@@ -15,7 +15,7 @@ class AuthRemoteDataSourceImp implements AuthRemoteDataSource {
   AuthRemoteDataSourceImp({required this.webServices});
 
   @override
-  Future<AuthResponseDto> login(LoginRequestDto loginRequest) async {
+  Future<AuthResponse> login(LoginRequest loginRequest) async {
     /// LoginRequestDto  => to => LoginRequest
     var authResponse = await webServices.login(loginRequest.toLoginRequest());
 
@@ -24,7 +24,7 @@ class AuthRemoteDataSourceImp implements AuthRemoteDataSource {
   }
 
   @override
-  Future<AuthResponseDto> register(RegisterRequestDto registerRequest) async {
+  Future<AuthResponse> register(RegisterRequest registerRequest) async {
     /// todo :RegisterRequestDto => to => RegisterRequest
     var authResponse = await webServices.register(
       registerRequest.toRegisterRequest(),

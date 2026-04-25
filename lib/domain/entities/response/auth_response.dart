@@ -1,8 +1,8 @@
-import 'package:ecommerce/domain/entities/response/user_d.dart';
+import 'package:ecommerce/domain/entities/response/user.dart';
 
-class AuthResponseD {
-  final UserD? userDto;
+class AuthResponse {
+  final User? userDto;
   final String? token;
 
-  AuthResponseD({required this.userDto, required this.token});
+  AuthResponse({required this.userDto, required this.token});
 }

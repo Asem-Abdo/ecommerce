@@ -1,6 +1,6 @@
-import 'package:ecommerce/domain/entities/request/login_request_dto.dart';
-import 'package:ecommerce/domain/entities/request/register_request_dto.dart';
-import 'package:ecommerce/domain/entities/response/auth_response_dto.dart';
+import 'package:ecommerce/domain/entities/request/login_request.dart';
+import 'package:ecommerce/domain/entities/request/register_request.dart';
+import 'package:ecommerce/domain/entities/response/auth_response.dart';
 import 'package:ecommerce/domain/repositories/auth_repository.dart';
 import 'package:injectable/injectable.dart';
 
@@ -9,7 +9,7 @@ class RegisterUseCase {
   AuthRepository authRepository;
   RegisterUseCase({required this.authRepository});
 
-  Future<AuthResponseDto> invoke(RegisterRequestDto registerRequest) {
+  Future<AuthResponse> invoke(RegisterRequest registerRequest) {
     return authRepository.register(registerRequest);
   }
 }

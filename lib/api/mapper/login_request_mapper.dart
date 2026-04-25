@@ -1,8 +1,8 @@
-import '../../domain/entities/request/login_request_dto.dart';
-import '../model/request/login_request.dart';
+import '../../domain/entities/request/login_request.dart';
+import '../model/request/login_request_dto.dart';
 
-extension LoginRequestMapper on LoginRequestDto {
-  LoginRequest toLoginRequest() {
-    return LoginRequest(password: password, email: email);
+extension LoginRequestMapper on LoginRequest {
+  LoginRequestDto toLoginRequest() {
+    return LoginRequestDto(password: password, email: email);
   }
 }

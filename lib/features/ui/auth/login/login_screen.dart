@@ -29,6 +29,8 @@ class _LoginScreenState extends State<LoginScreen> {
     text: 'Asem@123',
   );
 
+  bool isPasswordHidden = true;
+
   LoginViewModel viewModel = getIt<LoginViewModel>();
 
   @override
@@ -109,7 +111,7 @@ class _LoginScreenState extends State<LoginScreen> {
                             Text('Password', style: AppStyles.medium18White),
                             SizedBox(height: 24.h),
                             CustomTextFormField(
-                              isPassword: true,
+                              isPassword: isPasswordHidden,
                               keyboardType: TextInputType.visiblePassword,
                               isObscureText: true,
                               hintText: 'Enter your password',
@@ -118,8 +120,14 @@ class _LoginScreenState extends State<LoginScreen> {
                               controller: _passwordController,
                               validator: Validators.validatePassword,
                               suffixIcon: IconButton(
-                                onPressed: () {},
-                                icon: Icon(Icons.visibility_off),
+                                onPressed: () {
+                                  setState(() {
+                                    isPasswordHidden = !isPasswordHidden;
+                                  });
+                                },
+                                icon: isPasswordHidden
+                                    ? Icon(Icons.visibility_off)
+                                    : Icon(Icons.visibility),
                               ),
                             ),
                             SizedBox(height: 16.h),

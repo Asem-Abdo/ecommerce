@@ -26,6 +26,8 @@ class _RegisterScreenState extends State<RegisterScreen> {
   final TextEditingController _phoneNumberController = TextEditingController();
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _rePasswordController = TextEditingController();
+  bool isPasswordHidden = true;
+  bool isRePasswordHidden = true;
 
   RegisterViewModel viewModel = getIt<RegisterViewModel>();
 
@@ -121,7 +123,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                           Text('Password', style: AppStyles.medium18White),
                           SizedBox(height: 24.h),
                           CustomTextFormField(
-                            isPassword: true,
+                            isPassword: isPasswordHidden,
                             keyboardType: TextInputType.visiblePassword,
                             isObscureText: true,
                             hintText: 'enter your password',
@@ -130,15 +132,21 @@ class _RegisterScreenState extends State<RegisterScreen> {
                             controller: _passwordController,
                             validator: Validators.validatePassword,
                             suffixIcon: IconButton(
-                              onPressed: () {},
-                              icon: Icon(Icons.visibility_off),
+                              onPressed: () {
+                                setState(() {
+                                  isPasswordHidden = !isPasswordHidden;
+                                });
+                              },
+                              icon: isPasswordHidden
+                                  ? Icon(Icons.visibility_off)
+                                  : Icon(Icons.visibility),
                             ),
                           ),
                           SizedBox(height: 32.h),
                           Text('RePassword', style: AppStyles.medium18White),
                           SizedBox(height: 24.h),
                           CustomTextFormField(
-                            isPassword: true,
+                            isPassword: isRePasswordHidden,
                             keyboardType: TextInputType.visiblePassword,
                             isObscureText: true,
                             hintText: 'enter your rePassword',
@@ -147,8 +155,14 @@ class _RegisterScreenState extends State<RegisterScreen> {
                             controller: _rePasswordController,
                             validator: Validators.validatePassword,
                             suffixIcon: IconButton(
-                              onPressed: () {},
-                              icon: Icon(Icons.visibility_off),
+                              onPressed: () {
+                                setState(() {
+                                  isRePasswordHidden = !isRePasswordHidden;
+                                });
+                              },
+                              icon: isPasswordHidden
+                                  ? Icon(Icons.visibility_off)
+                                  : Icon(Icons.visibility),
                             ),
                           ),
                           Padding(

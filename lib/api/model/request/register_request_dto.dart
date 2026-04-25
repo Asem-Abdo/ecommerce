@@ -1,9 +1,9 @@
 import 'package:json_annotation/json_annotation.dart';
 
-part 'register_request.g.dart';
+part 'register_request_dto.g.dart';
 
 @JsonSerializable()
-class RegisterRequest {
+class RegisterRequestDto {
   @JsonKey(name: "name")
   final String? name;
   @JsonKey(name: "email")
@@ -15,7 +15,7 @@ class RegisterRequest {
   @JsonKey(name: "phone")
   final String? phone;
 
-  RegisterRequest({
+  RegisterRequestDto({
     this.name,
     this.email,
     this.password,
@@ -23,11 +23,11 @@ class RegisterRequest {
     this.phone,
   });
 
-  factory RegisterRequest.fromJson(Map<String, dynamic> json) {
-    return _$RegisterRequestFromJson(json);
+  factory RegisterRequestDto.fromJson(Map<String, dynamic> json) {
+    return _$RegisterRequestDtoFromJson(json);
   }
 
   Map<String, dynamic> toJson() {
-    return _$RegisterRequestToJson(this);
+    return _$RegisterRequestDtoToJson(this);
   }
 }

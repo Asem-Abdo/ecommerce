@@ -1,8 +1,8 @@
-import 'package:ecommerce/domain/entities/request/login_request_dto.dart';
-import 'package:ecommerce/domain/entities/request/register_request_dto.dart';
-import 'package:ecommerce/domain/entities/response/auth_response_dto.dart';
+import 'package:ecommerce/domain/entities/request/login_request.dart';
+import 'package:ecommerce/domain/entities/request/register_request.dart';
+import 'package:ecommerce/domain/entities/response/auth_response.dart';
 
 abstract class AuthRemoteDataSource {
-  Future<AuthResponseDto> login(LoginRequestDto loginRequest);
-  Future<AuthResponseDto> register(RegisterRequestDto registerRequest);
+  Future<AuthResponse> login(LoginRequest loginRequest);
+  Future<AuthResponse> register(RegisterRequest registerRequest);
 }
