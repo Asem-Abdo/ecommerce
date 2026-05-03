@@ -1,5 +1,5 @@
-import 'package:ecommerce/core/utils/app_routes.dart';
 import 'package:ecommerce/features/ui/auth/login/login_screen.dart';
+import 'package:ecommerce/features/ui/pages/home_screen/tabs/home_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -26,7 +26,7 @@ class MyApp extends StatelessWidget {
       builder: (context, child) {
         return MaterialApp(
           debugShowCheckedModeBanner: false,
-          home: LoginScreen(),
+          home: HomeScreen(),
 
           theme: AppTheme.lightTheme,
         );

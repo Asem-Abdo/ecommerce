@@ -6,7 +6,6 @@ import 'package:ecommerce/domain/entities/request/login_request.dart';
 import 'package:ecommerce/domain/entities/request/register_request.dart';
 import 'package:ecommerce/domain/entities/response/auth_response.dart';
 import 'package:injectable/injectable.dart';
-
 import '../../mapper/login_request_mapper.dart';
 
 @Injectable(as: AuthRemoteDataSource)
